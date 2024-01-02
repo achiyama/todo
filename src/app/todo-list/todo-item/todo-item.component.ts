@@ -8,7 +8,7 @@ import { Component } from '@angular/core';
   styleUrl: './todo-item.component.scss',
 })
 export class TodoItemComponent {
-  done: boolean = false;
+  done = false;
 
   onToggle(): void {
     this.done = !this.done;
