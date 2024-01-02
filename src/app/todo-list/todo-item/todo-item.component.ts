@@ -7,4 +7,10 @@ import { Component } from '@angular/core';
   templateUrl: './todo-item.component.html',
   styleUrl: './todo-item.component.scss',
 })
-export class TodoItemComponent {}
+export class TodoItemComponent {
+  done: boolean = false;
+
+  onToggle(): void {
+    this.done = !this.done;
+  }
+}
