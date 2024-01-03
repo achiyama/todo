@@ -1,3 +1,11 @@
-<div (click)="onToggle()" class="hover:td-bg-indigo-400 td-text-slate-100 td-bg-indigo-500 td-rounded-lg td-cursor-pointer td-flex td-items-center td-gap-4 td-border-2 td-px-4 td-py-2">
-  <div>ToDo Item</div>
+<div
+  (click)="onToggle()"
+  [ngClass]="
+    done
+      ? 'td-bg-slate-700 td-text-slate-400 td-line-through'
+      : 'td-bg-indigo-500 td-text-slate-100 hover:td-bg-indigo-400'
+  "
+  class="td-flex td-cursor-pointer td-select-none td-items-center td-gap-4 td-rounded-lg td-border-2 td-px-4 td-py-2"
+>
+  <div class="td-select-none td-text-lg">{{ title }}</div>
 </div>
