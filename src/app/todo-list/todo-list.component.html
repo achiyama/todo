@@ -1,3 +1,9 @@
-<p>todo-list works!</p>
+<input id="name" type="text" [formControl]="title" />
 
-<app-todo-item></app-todo-item>
+<button (click)="onAdd()">Add</button>
+
+@for (item of todoItems; track item) {
+  <ng-container
+    *ngComponentOutlet="item.comonent; inputs: item.inputs"
+  ></ng-container>
+}

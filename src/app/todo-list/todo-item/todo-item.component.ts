@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'app-todo-item',
@@ -9,8 +9,16 @@ import { Component } from '@angular/core';
   styleUrl: './todo-item.component.scss',
 })
 export class TodoItemComponent {
+  @Input() set title(value: string) {
+    this._title = value;
+  }
+
+  get title(): string {
+    return this._title;
+  }
+
   done = false;
-  title = '牛乳を買う';
+  private _title!: string;
 
   onToggle(): void {
     this.done = !this.done;
