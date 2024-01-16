@@ -1,5 +1,6 @@
 <div
   (click)="onToggle()"
+  (contextmenu)="onRightClick($event)"
   [ngClass]="
     done
       ? 'td-bg-slate-700 td-text-slate-400 td-line-through'

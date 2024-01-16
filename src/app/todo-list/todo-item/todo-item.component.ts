@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component, Input } from '@angular/core';
+import { Component, HostListener, Input } from '@angular/core';
 
 @Component({
   selector: 'app-todo-item',
@@ -18,9 +18,19 @@ export class TodoItemComponent {
   }
 
   done = false;
+
   private _title!: string;
 
   onToggle(): void {
     this.done = !this.done;
+  }
+
+  onRightClick(event: MouseEvent): void {
+    console.log('Right click', event);
+  }
+
+  @HostListener('contextmenu', ['$event'])
+  preventContextMenu(event: MouseEvent): boolean {
+    return false;
   }
 }

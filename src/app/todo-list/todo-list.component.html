@@ -1,6 +1,14 @@
-<input id="name" type="text" [formControl]="title" />
+<div class="td-flex td-items-center">
+  <input
+    id="name"
+    class="td-rounded-md td-border-2 td-border-stone-500 td-bg-slate-300 td-px-4 td-py-2"
+    type="text"
+    [formControl]="title"
+    placeholder="タスクを入力してください"
+  />
 
-<button (click)="onAdd()">Add</button>
+  <button (click)="onAdd()">Add</button>
+</div>
 
 @for (item of todoItems; track item) {
   <ng-container
