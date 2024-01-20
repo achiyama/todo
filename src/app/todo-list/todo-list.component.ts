@@ -4,7 +4,7 @@ import { NgComponentOutlet } from '@angular/common';
 import { FormControl, ReactiveFormsModule } from '@angular/forms';
 
 type ToDoItems = {
-  comonent: Type<TodoItemComponent>;
+  component: Type<TodoItemComponent>;
   inputs: Record<string, unknown>;
 };
 
@@ -21,7 +21,7 @@ export class TodoListComponent {
 
   onAdd(): void {
     this.todoItems.push({
-      comonent: TodoItemComponent,
+      component: TodoItemComponent,
       inputs: { title: this.title.value },
     });
   }

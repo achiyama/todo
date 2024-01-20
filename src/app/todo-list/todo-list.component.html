@@ -12,6 +12,6 @@
 
 @for (item of todoItems; track item) {
   <ng-container
-    *ngComponentOutlet="item.comonent; inputs: item.inputs"
+    *ngComponentOutlet="item.component; inputs: item.inputs"
   ></ng-container>
 }
