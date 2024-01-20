@@ -10,8 +10,10 @@
   <button (click)="onAdd()">Add</button>
 </div>
 
-@for (item of todoItems; track item) {
-  <ng-container
-    *ngComponentOutlet="item.component; inputs: item.inputs"
-  ></ng-container>
-}
+<div class="td-flex td-flex-col td-gap-1">
+  @for (item of todoItems; track item) {
+    <ng-container
+      *ngComponentOutlet="item.component; inputs: item.inputs"
+    ></ng-container>
+  }
+</div>

@@ -4,9 +4,32 @@
   [ngClass]="
     done
       ? 'td-bg-slate-700 td-text-slate-400 td-line-through'
-      : 'td-bg-indigo-500 td-text-slate-100 hover:td-bg-indigo-400'
+      : 'td-bg-slate-50 td-text-slate-600 hover:td-bg-slate-100'
   "
   class="td-flex td-cursor-pointer td-select-none td-items-center td-gap-4 td-rounded-lg td-border-2 td-px-4 td-py-2"
 >
+  <div>
+    @if (done) {
+      <svg
+        class="td-h-6 td-w-6 td-fill-green-500"
+        viewBox="0 0 512 512"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="m256 8c-136.967 0-248 111.033-248 248s111.033 248 248 248 248-111.033 248-248-111.033-248-248-248zm0 48c110.532 0 200 89.451 200 200 0 110.532-89.451 200-200 200-110.532 0-200-89.451-200-200 0-110.532 89.451-200 200-200m140.204 130.267-22.536-22.718c-4.667-4.705-12.265-4.736-16.97-.068l-141.352 140.216-59.792-60.277c-4.667-4.705-12.265-4.736-16.97-.069l-22.719 22.536c-4.705 4.667-4.736 12.265-.068 16.971l90.781 91.516c4.667 4.705 12.265 4.736 16.97.068l172.589-171.204c4.704-4.668 4.734-12.266.067-16.971z"
+        />
+      </svg>
+    } @else {
+      <svg
+        class="td-h-6 td-w-6 td-fill-green-500"
+        viewBox="0 0 512 512"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="m256 8c-137 0-248 111-248 248s111 248 248 248 248-111 248-248-111-248-248-248zm0 448c-110.5 0-200-89.5-200-200s89.5-200 200-200 200 89.5 200 200-89.5 200-200 200z"
+        />
+      </svg>
+    }
+  </div>
   <div class="td-select-none td-text-lg">{{ title }}</div>
 </div>
