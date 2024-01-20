@@ -16,11 +16,13 @@ type ToDoItems = {
   styleUrl: './todo-list.component.scss',
 })
 export class TodoListComponent {
-  todoItems: ToDoItems[] = [];
+  activeItems: ToDoItems[] = [];
+  completedItems: ToDoItems[] = [];
+
   title = new FormControl('');
 
   onAdd(): void {
-    this.todoItems.push({
+    this.activeItems.push({
       component: TodoItemComponent,
       inputs: { title: this.title.value },
     });

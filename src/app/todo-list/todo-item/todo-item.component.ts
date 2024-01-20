@@ -1,5 +1,11 @@
 import { CommonModule } from '@angular/common';
-import { Component, HostListener, Input } from '@angular/core';
+import {
+  Component,
+  EventEmitter,
+  HostListener,
+  Input,
+  Output,
+} from '@angular/core';
 
 @Component({
   selector: 'app-todo-item',
@@ -9,6 +15,8 @@ import { Component, HostListener, Input } from '@angular/core';
   styleUrl: './todo-item.component.scss',
 })
 export class TodoItemComponent {
+  @Output() doneEvent = new EventEmitter<string>();
+
   @Input() set title(value: string) {
     this._title = value;
   }
@@ -23,6 +31,10 @@ export class TodoItemComponent {
 
   onToggle(): void {
     this.done = !this.done;
+
+    if (this.done) {
+      this.doneEvent.emit(this.title);
+    }
   }
 
   onRightClick(event: MouseEvent): void {
