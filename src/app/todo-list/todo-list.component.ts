@@ -1,7 +1,7 @@
-import { Component, Type } from '@angular/core';
+import { Component, Type, ViewChild, ViewContainerRef } from '@angular/core';
 import { TodoItemComponent } from './todo-item/todo-item.component';
 import { NgComponentOutlet } from '@angular/common';
-import { FormControl, ReactiveFormsModule } from '@angular/forms';
+import { FormControl, ReactiveFormsModule, Validators } from '@angular/forms';
 
 type ToDoItems = {
   component: Type<TodoItemComponent>;
@@ -16,15 +16,18 @@ type ToDoItems = {
   styleUrl: './todo-list.component.scss',
 })
 export class TodoListComponent {
+  @ViewChild('container', { static: true, read: ViewContainerRef })
+  container!: ViewContainerRef;
+
   activeItems: ToDoItems[] = [];
   completedItems: ToDoItems[] = [];
 
-  title = new FormControl('');
+  title = new FormControl('', [Validators.required]);
+
+  constructor() {}
 
   onAdd(): void {
-    this.activeItems.push({
-      component: TodoItemComponent,
-      inputs: { title: this.title.value },
-    });
+    const todoItem = this.container.createComponent(TodoItemComponent);
+    todoItem.instance.title = this.title.value!;
   }
 }

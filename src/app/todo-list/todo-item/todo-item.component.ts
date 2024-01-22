@@ -17,7 +17,7 @@ import {
 export class TodoItemComponent {
   @Output() doneEvent = new EventEmitter<string>();
 
-  @Input() set title(value: string) {
+  @Input({ required: true }) set title(value: string) {
     this._title = value;
   }
 

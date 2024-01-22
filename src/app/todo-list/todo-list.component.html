@@ -1,24 +1,16 @@
-<div class="td-flex td-items-center">
-  <input
-    id="name"
-    class="td-rounded-md td-border-2 td-border-stone-500 td-bg-slate-300 td-px-4 td-py-2"
-    type="text"
-    [formControl]="title"
-    [placeholder]="'what needs to be done?'"
-  />
+<div class="td-w-[61.25rem]">
+  <div class="td-flex td-w-full td-flex-col td-items-center">
+    <input
+      id="name"
+      class="td-mt-4 td-w-auto td-rounded-md td-border-2 td-border-stone-500 td-bg-slate-300 td-px-4 td-py-2"
+      type="text"
+      [formControl]="title"
+      [placeholder]="'what needs to be done?'"
+    />
+    <button (click)="onAdd()">Add</button>
+  </div>
 
-  <button (click)="onAdd()">Add</button>
-</div>
-
-<div class="td-mt-3 td-flex td-flex-col td-gap-1">
-  @for (item of activeItems; track item) {
-    <ng-container
-      *ngComponentOutlet="item.component; inputs: item.inputs"
-    ></ng-container>
-  }
-  @for (item of completedItems; track item) {
-    <ng-container
-      *ngComponentOutlet="item.component; inputs: item.inputs"
-    ></ng-container>
-  }
+  <div class="td-mt-3 td-flex td-flex-col td-gap-1">
+    <ng-container #container></ng-container>
+  </div>
 </div>
