@@ -1,16 +1,16 @@
 <div class="td-w-[61.25rem]">
-  <div class="td-flex td-w-full td-flex-col td-items-center">
+  <div class="td-mt-3 td-flex td-flex-col td-gap-1">
+    <ng-container #container></ng-container>
+  </div>
+
+  <div class="td-w-full td-items-center">
     <input
       id="name"
-      class="td-mt-4 td-w-auto td-rounded-md td-border-2 td-border-stone-500 td-bg-slate-300 td-px-4 td-py-2"
+      class="td-mt-4 td-w-full td-rounded-md td-border-2 td-border-slate-600 td-bg-slate-500 td-px-4 td-py-2 td-text-slate-200"
       type="text"
+      (keyup.enter)="onAdd()"
       [formControl]="title"
       [placeholder]="'what needs to be done?'"
     />
-    <button (click)="onAdd()">Add</button>
-  </div>
-
-  <div class="td-mt-3 td-flex td-flex-col td-gap-1">
-    <ng-container #container></ng-container>
   </div>
 </div>
