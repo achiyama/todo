@@ -7,7 +7,8 @@ import {
   Output,
 } from '@angular/core';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
-import { faCheckCircle, faCircle } from '@fortawesome/free-regular-svg-icons';
+import { faCircle } from '@fortawesome/free-regular-svg-icons';
+import { faCheckCircle } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-todo-item',
