@@ -6,11 +6,13 @@ import {
   Input,
   Output,
 } from '@angular/core';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { faCheckCircle, faCircle } from '@fortawesome/free-regular-svg-icons';
 
 @Component({
   selector: 'app-todo-item',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, FontAwesomeModule],
   templateUrl: './todo-item.component.html',
   styleUrl: './todo-item.component.scss',
 })
@@ -20,6 +22,11 @@ export class TodoItemComponent {
   @Input({ required: true }) set title(value: string) {
     this._title = value;
   }
+
+  icons = {
+    active: faCircle,
+    done: faCheckCircle,
+  };
 
   get title(): string {
     return this._title;

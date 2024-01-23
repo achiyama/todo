@@ -27,7 +27,10 @@ export class TodoListComponent {
   constructor() {}
 
   onAdd(): void {
-    const todoItem = this.container.createComponent(TodoItemComponent);
-    todoItem.instance.title = this.title.value!;
+    if (this.title.valid) {
+      const todoItem = this.container.createComponent(TodoItemComponent);
+      todoItem.instance.title = this.title.value!;
+      this.title.reset();
+    }
   }
 }
