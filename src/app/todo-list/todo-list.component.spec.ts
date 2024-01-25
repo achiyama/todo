@@ -1,5 +1,4 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-
 import { TodoListComponent } from './todo-list.component';
 
 describe('TodoListComponent', () => {
@@ -8,16 +7,22 @@ describe('TodoListComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [TodoListComponent]
-    })
-    .compileComponents();
-    
+      imports: [TodoListComponent],
+    }).compileComponents();
+
     fixture = TestBed.createComponent(TodoListComponent);
     component = fixture.componentInstance;
+
     fixture.detectChanges();
   });
 
   it('should create', () => {
     expect(component).toBeTruthy();
+  });
+
+  it('create a todo item', () => {
+    component.title.setValue('Test');
+    component.onAdd();
+    expect(component.container.length).toBe(1);
   });
 });
