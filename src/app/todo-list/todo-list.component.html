@@ -3,7 +3,7 @@
     <ng-container #container></ng-container>
   </div>
 
-  <div class="td-w-full td-items-center">
+  <div class="td-items-center">
     <input
       #todoInput
       id="todo-input"
@@ -13,5 +13,8 @@
       [formControl]="title"
       [placeholder]="'what needs to be done?'"
     />
+  </div>
+  <div>
+    <app-task-form></app-task-form>
   </div>
 </div>

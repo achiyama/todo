@@ -7,12 +7,18 @@ import {
 import { TodoItemComponent } from './todo-item/todo-item.component';
 import { NgComponentOutlet } from '@angular/common';
 import { FormControl, ReactiveFormsModule, Validators } from '@angular/forms';
+import { TaskFormComponent } from './task-form/task-form.component';
 
 @Component({
   selector: 'app-todo-list',
   standalone: true,
-  imports: [TodoItemComponent, NgComponentOutlet, ReactiveFormsModule],
   templateUrl: './todo-list.component.html',
+  imports: [
+    TodoItemComponent,
+    NgComponentOutlet,
+    ReactiveFormsModule,
+    TaskFormComponent,
+  ],
 })
 export class TodoListComponent {
   @ViewChild('container', { static: true, read: ViewContainerRef })
