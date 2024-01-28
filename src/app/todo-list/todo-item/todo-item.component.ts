@@ -15,7 +15,6 @@ import { faCheckCircle as solidFarCircle } from '@fortawesome/free-solid-svg-ico
   standalone: true,
   imports: [CommonModule, FontAwesomeModule],
   templateUrl: './todo-item.component.html',
-  styleUrl: './todo-item.component.scss',
 })
 export class TodoItemComponent {
   @Output() doneEvent = new EventEmitter<string>();

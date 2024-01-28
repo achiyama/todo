@@ -13,7 +13,6 @@ import { FormControl, ReactiveFormsModule, Validators } from '@angular/forms';
   standalone: true,
   imports: [TodoItemComponent, NgComponentOutlet, ReactiveFormsModule],
   templateUrl: './todo-list.component.html',
-  styleUrl: './todo-list.component.scss',
 })
 export class TodoListComponent {
   @ViewChild('container', { static: true, read: ViewContainerRef })
