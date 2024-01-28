@@ -1,14 +1,13 @@
 <div
-  (click)="onToggle()"
   (contextmenu)="onRightClick($event)"
   [ngClass]="
     done
       ? 'td-bg-slate-700 td-text-slate-400 td-line-through'
       : 'td-bg-slate-50 td-text-slate-600 hover:td-bg-slate-100'
   "
-  class="td-flex td-cursor-pointer td-select-none td-items-center td-gap-4 td-rounded-lg td-border-2 td-px-4 td-py-2"
+  class="td-flex td-select-none td-items-center td-gap-4 td-rounded-lg td-px-4 td-py-2"
 >
-  <div>
+  <div class="td-cursor-pointer" (click)="onToggle()">
     <fa-icon [icon]="done ? icons.done : icons.active" [size]="'lg'"></fa-icon>
   </div>
   <div class="td-select-none td-text-lg">{{ title }}</div>

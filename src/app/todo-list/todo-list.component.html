@@ -1,5 +1,5 @@
-<div class="td-w-[61.25rem]">
-  <div class="td-mt-3 td-flex td-flex-col td-gap-1">
+<div>
+  <div class="td-flex td-flex-col td-gap-1">
     <ng-container #container></ng-container>
   </div>
 
@@ -7,7 +7,7 @@
     <input
       #todoInput
       id="todo-input"
-      class="td-mt-4 td-h-16 td-w-full td-rounded-md td-border-2 td-border-slate-100 td-bg-slate-200 td-px-4 td-py-2 td-text-slate-800"
+      class="td-h-16 td-w-full td-rounded-md td-border-2 td-border-slate-100 td-bg-slate-200 td-px-4 td-py-2 td-text-slate-800"
       type="text"
       (keyup.enter)="onAdd()"
       [formControl]="title"
