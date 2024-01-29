@@ -8,7 +8,11 @@
   class="td-flex td-select-none td-items-center td-gap-4 td-rounded-lg td-border td-px-4 td-py-2"
 >
   <div class="td-cursor-pointer" (click)="onToggle()">
-    <fa-icon [icon]="done ? icons.done : icons.active" [size]="'lg'"></fa-icon>
+    <fa-icon
+      [icon]="done ? icons.done : icons.active"
+      [size]="'lg'"
+      class="td-text-slate-400"
+    ></fa-icon>
   </div>
   <div class="td-select-none td-text-lg">{{ title }}</div>
 </div>
