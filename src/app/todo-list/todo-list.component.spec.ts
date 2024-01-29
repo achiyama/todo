@@ -23,6 +23,10 @@ describe('TodoListComponent', () => {
   it('create a todo item', () => {
     component.title.setValue('Test');
     component.onAdd();
-    expect(component.container.length).toBe(1);
+    component.title.setValue('Test');
+    component.onAdd();
+    component.title.setValue('Test');
+    component.onAdd();
+    expect(component.container.length).toBe(3);
   });
 });

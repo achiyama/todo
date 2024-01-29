@@ -5,6 +5,5 @@ import { Component } from '@angular/core';
   standalone: true,
   imports: [],
   templateUrl: './task-form.component.html',
-  styleUrl: './task-form.component.scss',
 })
 export class TaskFormComponent {}
