@@ -19,8 +19,8 @@ import { faCheckCircle as solidFarCircle } from '@fortawesome/free-solid-svg-ico
 export class TodoItemComponent {
   @Output() doneEvent = new EventEmitter<string>();
 
-  @Input({ required: true }) set title(value: string) {
-    this._title = value;
+  @Input({ required: true }) set taskName(value: string) {
+    this._taskName = value;
   }
 
   icons = {
@@ -28,19 +28,19 @@ export class TodoItemComponent {
     done: solidFarCircle,
   };
 
-  get title(): string {
-    return this._title;
+  get taskName(): string {
+    return this._taskName;
   }
 
   done = false;
 
-  private _title!: string;
+  private _taskName!: string;
 
   onToggle(): void {
     this.done = !this.done;
 
     if (this.done) {
-      this.doneEvent.emit(this.title);
+      this.doneEvent.emit(this.taskName);
     }
   }
 

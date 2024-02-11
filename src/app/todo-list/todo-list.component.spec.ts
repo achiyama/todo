@@ -21,11 +21,11 @@ describe('TodoListComponent', () => {
   });
 
   it('create a todo item', () => {
-    component.title.setValue('Test');
+    component.taskName.setValue('Test');
     component.onAdd();
-    component.title.setValue('Test');
+    component.taskName.setValue('Test');
     component.onAdd();
-    component.title.setValue('Test');
+    component.taskName.setValue('Test');
     component.onAdd();
     expect(component.container.length).toBe(3);
   });

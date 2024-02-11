@@ -1,20 +1,20 @@
-<div>
+<div class="td-relative td-h-screen">
   <div class="td-flex td-flex-col td-gap-1">
     <ng-container #container></ng-container>
   </div>
 
-  <div class="td-items-center">
+  <div class="td-absolute td-bottom-2 td-w-full">
     <input
       #todoInput
       id="todo-input"
       class="td-h-16 td-w-full td-rounded-md td-border-2 td-border-slate-100 td-bg-slate-200 td-px-4 td-py-2 td-text-slate-800"
       type="text"
       (keyup.enter)="onAdd()"
-      [formControl]="title"
+      [formControl]="taskName"
       [placeholder]="'what needs to be done?'"
     />
   </div>
-  <div>
+  <!-- <div>
     <app-task-form></app-task-form>
-  </div>
+  </div> -->
 </div>
