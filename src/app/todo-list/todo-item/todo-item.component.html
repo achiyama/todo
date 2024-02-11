@@ -7,11 +7,11 @@
   "
   class="td-flex td-select-none td-items-center td-gap-4 td-rounded-lg td-border td-px-4 td-py-2"
 >
-  <div class="td-cursor-pointer" (click)="onToggle()">
-    <fa-icon
-      [icon]="done ? icons.done : icons.active"
-      class="td-text-slate-400"
-    ></fa-icon>
-  </div>
+  <fa-icon
+    class="td-cursor-pointer td-text-slate-400"
+    (click)="onToggle()"
+    [icon]="done ? icons.done : icons.active"
+  ></fa-icon>
   <div class="td-select-none td-text-lg">{{ taskName }}</div>
+  <fa-icon class="td-ml-auto td-cursor-pointer" [icon]="icons.delete"></fa-icon>
 </div>

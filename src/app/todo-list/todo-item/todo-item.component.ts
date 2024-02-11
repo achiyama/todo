@@ -7,25 +7,30 @@ import {
   Output,
 } from '@angular/core';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
-import { faCircle as regularFarCircle } from '@fortawesome/free-regular-svg-icons';
-import { faCheckCircle as solidFarCircle } from '@fortawesome/free-solid-svg-icons';
+import { faCircle as faRegularCircle } from '@fortawesome/free-regular-svg-icons';
+import { faTrash as faSolidTrash } from '@fortawesome/free-solid-svg-icons';
+import { faCheckCircle as faRegularCheckCircle } from '@fortawesome/free-regular-svg-icons';
+import { faCheckCircle as faSolidCheckCircle } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
-  selector: 'app-todo-item',
   standalone: true,
   imports: [CommonModule, FontAwesomeModule],
+  selector: 'app-todo-item',
   templateUrl: './todo-item.component.html',
 })
 export class TodoItemComponent {
   @Output() doneEvent = new EventEmitter<string>();
+  @Output() deleteEvent = new EventEmitter<string>();
 
   @Input({ required: true }) set taskName(value: string) {
     this._taskName = value;
   }
 
   icons = {
-    active: regularFarCircle,
-    done: solidFarCircle,
+    active: faRegularCircle,
+    hover: faRegularCheckCircle,
+    done: faSolidCheckCircle,
+    delete: faSolidTrash,
   };
 
   get taskName(): string {
@@ -42,6 +47,10 @@ export class TodoItemComponent {
     if (this.done) {
       this.doneEvent.emit(this.taskName);
     }
+  }
+
+  onDelete(): void {
+    this.deleteEvent.emit(this.taskName);
   }
 
   onRightClick(event: MouseEvent): void {
