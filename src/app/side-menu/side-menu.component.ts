@@ -4,7 +4,6 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import {
   IconDefinition,
   faSun as faSolidSun,
-  faListCheck as faSolidListCheck,
   faCalendarDays as faSolidCalendarDays,
   faInbox as faSolidInbox,
 } from '@fortawesome/free-solid-svg-icons';

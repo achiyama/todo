@@ -1,15 +1,15 @@
 <div class="td-relative td-h-screen">
   <div class="td-flex td-flex-col td-gap-3">
-    <div class="td-flex td-flex-col td-gap-1">
+    <div class="td-flex td-flex-col td-gap-1 [&>*:last-child]:td-mb-3">
       <ng-container #container></ng-container>
     </div>
-    <div
-      (click)="todoInput.focus()"
-      class="td-flex td-cursor-pointer td-items-center td-justify-center td-gap-4 td-rounded-lg td-bg-gray-200 td-p-3 td-text-blue-600 hover:td-bg-gray-200/50"
-    >
-      <fa-icon [icon]="icons.plus"></fa-icon>
-      <div>Add Task</div>
-    </div>
+  </div>
+  <div
+    (click)="todoInput.focus()"
+    class="td-flex td-cursor-pointer td-items-center td-justify-center td-gap-4 td-rounded-lg td-bg-gray-200 td-p-3 td-text-blue-600 hover:td-bg-gray-200/50"
+  >
+    <fa-icon [icon]="icons.plus"></fa-icon>
+    <div>Add Task</div>
   </div>
 
   <div class="td-absolute td-bottom-2 td-w-full">
@@ -23,7 +23,4 @@
       [placeholder]="'what needs to be done?'"
     />
   </div>
-  <!-- <div>
-    <app-task-form></app-task-form>
-  </div> -->
 </div>

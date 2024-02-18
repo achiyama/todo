@@ -13,5 +13,9 @@
     [icon]="done ? icons.done : icons.active"
   ></fa-icon>
   <div class="td-select-none td-text-lg">{{ taskName }}</div>
-  <fa-icon class="td-ml-auto td-cursor-pointer" [icon]="icons.delete"></fa-icon>
+  <fa-icon
+    class="td-ml-auto td-cursor-pointer"
+    (click)="onDelete()"
+    [icon]="icons.delete"
+  ></fa-icon>
 </div>
