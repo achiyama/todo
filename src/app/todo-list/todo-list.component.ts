@@ -25,9 +25,9 @@ import { faPlus as faSolidPlus } from '@fortawesome/free-solid-svg-icons';
   templateUrl: './todo-list.component.html',
 })
 export class TodoListComponent {
-  @ViewChild('container', { read: ViewContainerRef })
+  @ViewChild('container', { read: ViewContainerRef, static: true })
   container!: ViewContainerRef;
-  @ViewChild('todoInput')
+  @ViewChild('todoInput', { static: true })
   todoInput!: ElementRef<HTMLInputElement>;
 
   taskName = new FormControl('', [Validators.required]);
