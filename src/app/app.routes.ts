@@ -11,4 +11,9 @@ export const routes: Routes = [
     loadComponent: () =>
       import('./canvas/canvas.component').then((m) => m.CanvasComponent),
   },
+  {
+    path: 'sample',
+    loadComponent: () =>
+      import('./sample/sample.component').then((m) => m.SampleComponent),
+  },
 ];
