@@ -16,4 +16,11 @@ export const routes: Routes = [
     loadComponent: () =>
       import('./sample/sample.component').then((m) => m.SampleComponent),
   },
+  {
+    path: 'signal-study',
+    loadComponent: () =>
+      import('./signal-study/signal-study.component').then(
+        (m) => m.SignalStudyComponent,
+      ),
+  },
 ];

@@ -14849,18 +14849,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"storybook@npm:^7.6.17":
-  version: 7.6.17
-  resolution: "storybook@npm:7.6.17"
-  dependencies:
-    "@storybook/cli": "npm:7.6.17"
-  bin:
-    sb: ./index.js
-    storybook: ./index.js
-  checksum: 10c0/256b8ff26b69f622889488605e786c0742350a901037139dd469ec20f2e7031c326d65f2a202a5ee7baa407ff407a6746af2f01d91c0c617eda2013679a65271
-  languageName: node
-  linkType: hard
-
 "stream-combiner@npm:^0.2.2":
   version: 0.2.2
   resolution: "stream-combiner@npm:0.2.2"
@@ -15451,7 +15439,6 @@ __metadata:
     react: "npm:^18.2.0"
     react-dom: "npm:^18.2.0"
     rxjs: "npm:~7.8.0"
-    storybook: "npm:^7.6.17"
     tailwindcss: "npm:^3.4.0"
     tslib: "npm:^2.3.0"
     typescript: "npm:~5.2.2"

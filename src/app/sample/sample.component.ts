@@ -1,6 +1,6 @@
-import { Component, ElementRef, ViewChild } from '@angular/core';
+import { Component } from '@angular/core';
 import { SampleStore } from './sample.store';
-import { BaseComponent } from './base/base.component';
+import { fromEvent } from 'rxjs';
 
 @Component({
   standalone: true,
@@ -9,14 +9,17 @@ import { BaseComponent } from './base/base.component';
   templateUrl: './sample.component.html',
   styleUrl: './sample.component.scss',
 })
-export class SampleComponent extends BaseComponent<SampleStore> {
+export class SampleComponent {
   // @ViewChild('myInput') myInput: ElementRef;
 
-  constructor(localStore: SampleStore) {
-    super(localStore);
-  }
+  click$ = fromEvent(document, 'click');
+
+  count: number = 0;
+
+  constructor(protected localStore: SampleStore) {}
 
   onClicK($event: MouseEvent) {
     this.localStore.setCount(4);
+    this.count++;
   }
 }

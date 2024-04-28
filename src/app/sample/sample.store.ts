@@ -1,7 +1,11 @@
-import { Injectable, signal } from '@angular/core';
+import { Injectable, signal, WritableSignal } from '@angular/core';
+import { ReadonlyState } from './base/base.store';
 
 export interface SampleStoreState {
-  count: number;
+  name: string;
+  while: {
+    loading: boolean;
+  };
 }
 
 @Injectable({ providedIn: 'root' })
